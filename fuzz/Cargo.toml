@@ -1,0 +1,19 @@
+[package]
+name = "fleet-fuzz"
+version = "0.0.0"
+edition = "2021"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+fleet-rs = { path = ".." }
+libfuzzer-sys = { version = "0.4", features = ["arbitrary-derive"] }
+
+# Prevent this from interfering with workspaces
+[workspace]
+members = ["."]
+
+[[bin]]
+name = "install_linker"
+path = "fuzz_targets/install_linker.rs"

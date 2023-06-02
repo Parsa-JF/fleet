@@ -1,0 +1,5 @@
+project: fleet
+target: install_linker
+
+cmds:
+  - cmd: /install_linker
